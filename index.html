@@ -5,12 +5,21 @@
 <title>Happy New Year ❄️</title>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">  
 <style>  
- { margin:0; padding:0; box-sizing:border-box; font-family:'Poppins', sans-serif; }  
- <body {  height:100vh;  
-  overflow:hidden;  
-  color:white;  
-  background:url("01c42a2a-4897-40db-a95c-c23018d74a3f.jpeg")center/cover no-repeat;  
+/* Reset & font */
+* {
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins', sans-serif;
 }
+
+body {
+  height:100vh;
+  overflow:hidden;
+  color:white;
+  background: url("01c42a2a-4897-40db-a95c-c23018d74a3f.jpeg") center/cover no-repeat;
+}
+
 /* SLIDES */
 .slide {
   display: none;
@@ -19,12 +28,14 @@
   padding: 40px;
   text-align: center;
 }
+
 .slide.active {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
+
 /* BUTTON */
 button {
   margin-top: 30px;
@@ -47,9 +58,7 @@ button {
 }
 
 @keyframes fall {
-  to {
-    transform: translateY(110vh);
-  }
+  to { transform: translateY(110vh); }
 }
 
 /* STARS */
@@ -66,21 +75,6 @@ button {
   to { opacity: 1; }
 }
 
-/* FLOWER */
-.flower {
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  background: pink;
-  animation: bloom 2s ease forwards;
-  margin-top: 20px;
-}
-
-@keyframes bloom {
-  from { transform: scale(0); }
-  to { transform: scale(1); }
-}
-
 /* FIREFLY */
 .firefly {
   position: fixed;
@@ -93,9 +87,7 @@ button {
 }
 
 @keyframes fly {
-  to {
-    transform: translate(200px, -150px);
-  }
+  to { transform: translate(200px, -150px); }
 }
 
 /* FIREWORK */
@@ -109,15 +101,16 @@ button {
   to { transform: scale(1.3); }
 }
 
-h1 { font-size: 40px; }
-p  { font-size: 18px; margin-top: 15px; }
+/* Text size */
+h1 { font-size: 50px; }
+p  { font-size: 22px; margin-top: 20px; }
 
 </style>
 </head>
 
 <body>
 
-<audio id="bgm" loop>
+<audio id="bgm" loop autoplay>
   <source src="https://cdn.pixabay.com/audio/2022/12/20/audio_33f8d12b7a.mp3" type="audio/mpeg">
 </audio>
 
@@ -131,49 +124,42 @@ p  { font-size: 18px; margin-top: 15px; }
 <div class="slide">
   <h1>Member 1</h1>
   <p>Makasih udah nemenin tahun ini 🤍</p>
-  <div class="flower"></div>
   <button onclick="nextSlide()">Next</button>
 </div>
 
 <div class="slide">
   <h1>Member 2</h1>
   <p>Semoga 2026 lebih hangat dan bahagia ❄️</p>
-  <div class="flower"></div>
   <button onclick="nextSlide()">Next</button>
 </div>
 
 <div class="slide">
   <h1>Member 3</h1>
   <p>Jangan lupa ketawa dan jaga diri ya ✨</p>
-  <div class="flower"></div>
   <button onclick="nextSlide()">Next</button>
 </div>
 
 <div class="slide">
   <h1>Member 4</h1>
   <p>Terima kasih sudah jadi bagian cerita 🤍</p>
-  <div class="flower"></div>
   <button onclick="nextSlide()">Next</button>
 </div>
 
 <div class="slide">
   <h1>Member 5</h1>
   <p>Semoga mimpi kecilmu pelan-pelan jadi nyata 🌸</p>
-  <div class="flower"></div>
   <button onclick="nextSlide()">Next</button>
 </div>
 
 <div class="slide">
   <h1>Member 6</h1>
   <p>Stay kind, stay weird, stay you ✨</p>
-  <div class="flower"></div>
   <button onclick="nextSlide()">Next</button>
 </div>
 
 <div class="slide">
   <h1>Member 7</h1>
   <p>Aku harap tahun depan kita tetap bareng 🤍</p>
-  <div class="flower"></div>
   <button onclick="nextSlide()">Next</button>
 </div>
 
