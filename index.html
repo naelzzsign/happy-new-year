@@ -3,22 +3,28 @@
 <head>
 <meta charset="UTF-8">
 <title>Happy New Year ❄️</title>
-
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  
 <style>
 * {
-  margin: 0;
+margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Arial', sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
-
 body {
-  background: radial-gradient(#0b1d3a, #020617);
-  color: white;
   height: 100vh;
   overflow: hidden;
+  color: white;
+  background: url("01c42a2a-4897-40db-a95c-c23018d74a3f.jpeg") center/cover no-repeat;
 }
-
+audio {
+  position: fixed;
+  top: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0.7;
+}
 /* SLIDES */
 .slide {
   display: none;
@@ -126,16 +132,18 @@ p  { font-size: 18px; margin-top: 15px; }
 </head>
 
 <body>
-
-<audio id="bgm" loop>
-  <source src="https://cdn.pixabay.com/audio/2022/12/20/audio_33f8d12b7a.mp3" type="audio/mpeg">
-</audio>
-
+  <!-- BACKGROUND MUSIC -->
+  <audio controls autoplay loop>
+    <source src="ENHYPEN (엔하이픈)-_MISTLETOE__ColorCodedLyrics.mp3" type="audio/mpeg">
+  </audio>
+  }
 <!-- SLIDES -->
 <div class="slide active">
   <h1>❄️ Happy New Year ❄️</h1>
   <p>For Member Yapping 🎆</p>
   <button onclick="nextSlide()">Open Gift 🎁</button>
+</div> 
+  <p class="hint">(tap play if music doesn’t start)</p>
 </div>
 
 <div class="slide">
