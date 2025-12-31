@@ -3,7 +3,6 @@
 <head>
 <meta charset="UTF-8">
 <title>Happy New Year ❄️</title>
-
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
@@ -13,66 +12,15 @@
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
 }
-  /* BUNGA MEKAR */
-.flower {
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  background: pink;
-  animation: bloom 2s ease forwards;
-  margin-top: 20px;
-  position: relative;
-}
-
-/* Animasi mekarnya bunga */
-@keyframes bloom {
-  from { transform: scale(0); }
-  to { transform: scale(1); }
-}
-
-/* KUPU-KUPU */
-.butterfly {
-  width: 40px;
-  height: 40px;
-  background: url('butterfly.png') no-repeat center/contain;
-  position: absolute;
-  top: -50px;
-  left: 50%;
-  animation: flyButterfly 6s infinite alternate ease-in-out;
-}
-
-/* Animasi kupu-kupu */
-@keyframes flyButterfly {
-  0% { transform: translateX(0) translateY(0) rotate(0deg); }
-  50% { transform: translateX(-30px) translateY(-20px) rotate(15deg); }
-  100% { transform: translateX(30px) translateY(-40px) rotate(-15deg); }
-}
-
-/* KUNANG-KUNANG tambahan */
-.firefly {
-  position: absolute;
-  width: 6px;
-  height: 6px;
-  background: yellow;
-  border-radius: 50%;
-  opacity: 0.8;
-  animation: fly 5s infinite alternate;
-}
-
-@keyframes fly {
-  to {
-    transform: translate(200px, -150px);
-  }
-}
 
 body {
+  background: url("01c42a2a-4897-40db-a95c-c23018d74a3f.jpeg") center/cover no-repeat;
+  color: white;
   height: 100vh;
   overflow: hidden;
-  color: white;
-  background: url("01c42a2a-4897-40db-a95c-c23018d74a3f.jpeg") center/cover no-repeat;
 }
 
-/* ================= SLIDE ================= */
+/* ================= SLIDES ================= */
 .slide {
   position: fixed;
   inset: 0;
@@ -146,7 +94,7 @@ button {
   to { transform: translate(150px, -120px); }
 }
 
-/* FLOWER */
+/* FLOWER MEKAR */
 .flower {
   width: 60px;
   height: 60px;
@@ -161,15 +109,31 @@ button {
   to { transform: scale(1); }
 }
 
-h1 { font-size: 40px; }
-p { margin-top: 15px; }
+/* BUTTERFLY */
+.butterfly {
+  width: 30px;
+  height: 30px;
+  background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/Butterfly_icon.png/600px-Butterfly_icon.png') no-repeat center/contain;
+  position: absolute;
+  animation: flyButter 5s infinite alternate;
+}
+
+@keyframes flyButter {
+  0% { transform: translate(0,0) rotate(0deg); }
+  50% { transform: translate(50px,-50px) rotate(20deg); }
+  100% { transform: translate(100px,0) rotate(-20deg); }
+}
+
+h1 { font-size: 40px; margin-bottom: 10px; }
+p { margin-top: 15px; font-size: 18px; }
 </style>
 </head>
 
 <body>
 
-<audio id="bgm" loop>
-  <source src="https://cdn.pixabay.com/audio/2022/12/20/audio_33f8d12b7a.mp3">
+<!-- BACKGROUND MUSIC -->
+<audio id="bgm" loop autoplay>
+  <source src="https://cdn.pixabay.com/audio/2022/12/20/audio_33f8d12b7a.mp3" type="audio/mpeg">
 </audio>
 
 <!-- EFFECT CONTAINER -->
@@ -190,19 +154,59 @@ p { margin-top: 15px; }
 </div>
 
 <div class="slide">
+  <h1>Member 2</h1>
+  <p>Semoga 2026 lebih hangat dan bahagia ❄️</p>
+  <div class="flower"></div>
+  <button onclick="nextSlide()">Next</button>
+</div>
+
+<div class="slide">
+  <h1>Member 3</h1>
+  <p>Jangan lupa ketawa dan jaga diri ya ✨</p>
+  <div class="flower"></div>
+  <button onclick="nextSlide()">Next</button>
+</div>
+
+<div class="slide">
+  <h1>Member 4</h1>
+  <p>Terima kasih sudah jadi bagian cerita 🤍</p>
+  <div class="flower"></div>
+  <button onclick="nextSlide()">Next</button>
+</div>
+
+<div class="slide">
+  <h1>Member 5</h1>
+  <p>Semoga mimpi kecilmu pelan-pelan jadi nyata 🌸</p>
+  <div class="flower"></div>
+  <button onclick="nextSlide()">Next</button>
+</div>
+
+<div class="slide">
+  <h1>Member 6</h1>
+  <p>Stay kind, stay weird, stay you ✨</p>
+  <div class="flower"></div>
+  <button onclick="nextSlide()">Next</button>
+</div>
+
+<div class="slide">
+  <h1>Member 7</h1>
+  <p>Aku harap tahun depan kita tetap bareng 🤍</p>
+  <div class="flower"></div>
+  <button onclick="nextSlide()">Next</button>
+</div>
+
+<div class="slide">
   <h1>🎆 Happy New Year 🎆</h1>
-  <p>Thank you for everything 🤍</p>
+  <p>Terima kasih untuk semua momen tahun ini 🤍</p>
+  <!-- SLIDE AKHIR: BUNGA, BUTTERFLY, FIREFLY -->
+  <div class="flower"></div>
+  <div class="butterfly"></div>
+  <div class="butterfly"></div>
+  <div class="firefly"></div>
+  <div class="firefly"></div>
+  <div class="firefly"></div>
 </div>
-<div class="ending-scene">
-    <div class="flower"></div>
 
-    <div class="butterfly"></div>
-    <div class="butterfly"></div>
-
-    <div class="firefly"></div>
-    <div class="firefly"></div>
-    <div class="firefly"></div>
-</div>
 <script>
 let slides = document.querySelectorAll('.slide');
 let index = 0;
@@ -247,4 +251,4 @@ for (let i = 0; i < 10; i++) {
 </script>
 
 </body>
-</html>
+                          </html>
