@@ -13,6 +13,57 @@
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
 }
+  /* BUNGA MEKAR */
+.flower {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: pink;
+  animation: bloom 2s ease forwards;
+  margin-top: 20px;
+  position: relative;
+}
+
+/* Animasi mekarnya bunga */
+@keyframes bloom {
+  from { transform: scale(0); }
+  to { transform: scale(1); }
+}
+
+/* KUPU-KUPU */
+.butterfly {
+  width: 40px;
+  height: 40px;
+  background: url('butterfly.png') no-repeat center/contain;
+  position: absolute;
+  top: -50px;
+  left: 50%;
+  animation: flyButterfly 6s infinite alternate ease-in-out;
+}
+
+/* Animasi kupu-kupu */
+@keyframes flyButterfly {
+  0% { transform: translateX(0) translateY(0) rotate(0deg); }
+  50% { transform: translateX(-30px) translateY(-20px) rotate(15deg); }
+  100% { transform: translateX(30px) translateY(-40px) rotate(-15deg); }
+}
+
+/* KUNANG-KUNANG tambahan */
+.firefly {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: yellow;
+  border-radius: 50%;
+  opacity: 0.8;
+  animation: fly 5s infinite alternate;
+}
+
+@keyframes fly {
+  to {
+    transform: translate(200px, -150px);
+  }
+}
 
 body {
   height: 100vh;
@@ -142,7 +193,16 @@ p { margin-top: 15px; }
   <h1>🎆 Happy New Year 🎆</h1>
   <p>Thank you for everything 🤍</p>
 </div>
+<div class="ending-scene">
+    <div class="flower"></div>
 
+    <div class="butterfly"></div>
+    <div class="butterfly"></div>
+
+    <div class="firefly"></div>
+    <div class="firefly"></div>
+    <div class="firefly"></div>
+</div>
 <script>
 let slides = document.querySelectorAll('.slide');
 let index = 0;
