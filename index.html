@@ -80,7 +80,18 @@ button {
   animation: bloom 2s ease forwards;
   margin-top: 20px;
 }
-
+  
+/* FLOWER untuk slide terakhir */
+#flower-container .flower {
+  position: absolute;
+  bottom: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: pink;
+  animation: bloom 2s ease forwards;
+  }
+  
 @keyframes bloom {
   from { transform: scale(0); }
   to { transform: scale(1); }
@@ -186,6 +197,7 @@ p  { font-size: 18px; margin-top: 15px; }
   <h1>🎆 Happy New Year 🎆</h1>
   <p>Thank you for everything this year 🤍</p>
   <div class="firework">🎇 🎆 🎇</div>
+</div> id="flower-container"></div> <!-- 🌸 INI BAGIAN BARU -->
 </div>
 
 <script>
@@ -199,6 +211,11 @@ function nextSlide() {
   if (index < slides.length) {
     slides[index].classList.add('active');
     bgm.play();
+
+    // 🌸 Kalau ini slide terakhir, buat bunga mekar
+    if (index === slides.length - 1) {
+      createFlowers();
+    }
   }
 }
 
@@ -229,6 +246,17 @@ for (let i = 0; i < 10; i++) {
   f.style.top = Math.random() * 100 + "vh";
   document.body.appendChild(f);
 }
+
+// 🌸 Fungsi buat bunga slide terakhir
+function createFlowers() {
+  const container = document.getElementById('flower-container');
+  for (let i = 0; i < 15; i++) {
+    let flower = document.createElement('div');
+    flower.className = 'flower';
+    flower.style.left = Math.random() * 90 + 'vw';
+    flower.style.background = `hsl(${Math.random()*360}, 70%, 70%)`;
+    container.appendChild(flower);
+  }
 </script>
 
 </body>
