@@ -133,10 +133,10 @@ p  { font-size: 18px; margin-top: 15px; }
 
 <body>
   <!-- BACKGROUND MUSIC -->
-  <audio controls autoplay loop>
-    <source src="ENHYPEN (엔하이픈)-_MISTLETOE__ColorCodedLyrics.mp3" type="audio/mpeg">
-  </audio>
-  }
+<audio id="bgm" controls autoplay loop>
+  <source src="ENHYPEN (엔하이픈)-_MISTLETOE__ColorCodedLyrics.mp3" type="audio/mpeg">
+</audio>
+  
 <!-- SLIDES -->
 <div class="slide active">
   <h1>❄️ Happy New Year ❄️</h1>
@@ -205,6 +205,7 @@ p  { font-size: 18px; margin-top: 15px; }
 let slides = document.querySelectorAll('.slide');
 let index = 0;
 let bgm = document.getElementById('bgm');
+bgm.play();
 
 function nextSlide() {
   slides[index].classList.remove('active');
