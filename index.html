@@ -126,15 +126,29 @@ button {
 
 h1 { font-size: 40px; margin-bottom: 10px; }
 p { margin-top: 15px; font-size: 18px; }
+
+.music-control {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  z-index: 10;
+  padding: 10px 15px;
+  background: #ffffffaa;
+  color: #000;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
 </style>
 </head>
 
 <body>
 
 <!-- BACKGROUND MUSIC -->
-<audio id="bgm" loop autoplay>
+<audio id="bgm" loop>
   <source src="ENHYPEN(엔하이픈)-_MISTLETOE__ColorCodedLyrics.mp3" type="audio/mpeg">
 </audio>
+<button class="music-control" id="musicBtn">Play Music</button>
 
 <!-- EFFECT CONTAINER -->
 <div class="effect" id="effects"></div>
@@ -212,13 +226,24 @@ let slides = document.querySelectorAll('.slide');
 let index = 0;
 let bgm = document.getElementById('bgm');
 let effects = document.getElementById('effects');
+let musicBtn = document.getElementById('musicBtn');
+
+musicBtn.addEventListener('click', () => {
+  if(bgm.paused) {
+    bgm.play();
+    musicBtn.textContent = "Pause Music";
+  } else {
+    bgm.pause();
+    musicBtn.textContent = "Play Music";
+  }
+});
 
 function nextSlide() {
   slides[index].classList.remove('active');
   index++;
   if (index >= slides.length) index = slides.length - 1;
   slides[index].classList.add('active');
-  bgm.play();
+  if(bgm.paused) bgm.play();
 }
 
 /* SNOW */
@@ -251,4 +276,4 @@ for (let i = 0; i < 10; i++) {
 </script>
 
 </body>
-                          </html>
+  </html>
